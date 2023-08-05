@@ -23,18 +23,18 @@ class HBNBCommand(cmd.Cmd):
 
     def do_quit(self, arg):
         """Exit the program."""
-        return (True)
+        return True
 
     def do_EOF(self, arg):
         """Secures a clean exit."""
-        return (True)
+        return True
 
     def emptyline(self):
         """Stop the last executed command"""
         pass
 
     def do_create(self, arg):
-        """ Create a new instances of BaseModel
+        """Create a new instances of BaseModel
         class, save it into a JSON file and print id.
         """
         args = arg.split()
@@ -48,7 +48,7 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
 
     def do_show(self, arg):
-        """ Prints the string representationof an instance
+        """Prints the string representationof an instance
         based on the class name
         """
         args = arg.split()
@@ -66,7 +66,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, arg):
-        """ Deletes an instance based on the class
+        """Deletes an instance based on the class
         name and id; saves the change into de json file
         """
         args = arg.split()
@@ -105,8 +105,7 @@ class HBNBCommand(cmd.Cmd):
         print(obj_list)
 
     def do_update(self, arg):
-        """
-        """
+        """ """
         args = arg.split()
         if len(args) == 0:
             print("** class name missing **")
@@ -129,6 +128,5 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
-    
